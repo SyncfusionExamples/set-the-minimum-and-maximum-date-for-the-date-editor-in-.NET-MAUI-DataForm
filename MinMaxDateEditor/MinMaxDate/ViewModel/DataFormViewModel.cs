@@ -1,6 +1,6 @@
 ﻿namespace MinMaxDateEditor;
 
-internal class DataFormViewModel
+public class DataFormViewModel
 {
     public DataFormModel DataFormModel { get; set; }
 
