@@ -11,7 +11,6 @@ public class DataFormBehavior : Behavior<SfDataForm>
         dataForm.RegisterEditor("AppointmentTime", DataFormEditorType.Time);
         dataForm.GenerateDataFormItem += OnGenerateDataItem;
     }
-
     private void OnGenerateDataItem(object sender, GenerateDataFormItemEventArgs e)
     {
         if (e.DataFormItem != null && e.DataFormItem is DataFormDateItem dateItem)
@@ -19,5 +18,15 @@ public class DataFormBehavior : Behavior<SfDataForm>
             dateItem.MinimumDisplayDate = new DateTime(2022, 12, 05);
             dateItem.MaximumDisplayDate = new DateTime(2022, 12, 25);
         }
+    }
+    protected override void OnDetachingFrom(SfDataForm dataForm)
+    {
+        base.OnDetachingFrom(dataForm);
+        if (dataForm != null)
+        {
+            dataForm.GenerateDataFormItem -= this.OnGenerateDataItem;
+        }
+
+        dataForm = null;
     }
 }

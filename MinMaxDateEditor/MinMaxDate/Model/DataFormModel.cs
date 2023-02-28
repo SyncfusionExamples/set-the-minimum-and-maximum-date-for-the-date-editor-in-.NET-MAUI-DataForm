@@ -7,4 +7,3 @@ public class DataFormModel
     public string AppointmentDate { get; set; }
     public string AppointmentTime { get; set; }
 }
-
