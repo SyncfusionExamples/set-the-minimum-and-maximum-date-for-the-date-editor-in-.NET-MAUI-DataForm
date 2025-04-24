@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
              xmlns:local="clr-namespace:MinMaxDateEditor"
+             x:DataType="local:DataFormViewModel"
              x:Class="MinMaxDateEditor.MainPage">
     <dataForm:SfDataForm x:Name="dataForm"
                          DataObject="{Binding DataFormModel}">
